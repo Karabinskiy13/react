@@ -23,10 +23,10 @@ const App = () => {
                 <div className='info'>
                     <UserDetails userId={userId} getPosts={getPosts}/>
                 </div>
+            </div>
                 <div className='post'>
                     <UserPosts postId={postId}/>
                 </div>
-            </div>
         </div>
     );
 };
