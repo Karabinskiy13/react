@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import {Layout} from "./components/Layout/Layout";
+import {UsersPage} from "./components/Pages/UserPage/Users/UsersPage";
+import {SingleUser} from "./components/Pages/UserPage/Users/SingleUser";
+import {UserPosts} from "./components/Pages/UserPage/Posts/UserPosts";
+import {AlbumPhotos} from "./components/Pages/UserPage/Albums/AlbumPhotos";
+import {UsersAlbums} from "./components/Pages/UserPage/Albums/UsersAlbums";
+import {PostsPage} from "./components/Pages/PostPage/Posts/PostsPage";
+import {SinglePostPage} from "./components/Pages/PostPage/Posts/SinglePostPage";
+import {CommentsMap} from "./components/Pages/PostPage/Comments/CommentsMap";
+
+const App = () => {
+
+    return (
+        <div className='App'>
+            <Routes>
+                    <Route path={'/'} element={<Layout/>}>
+                        <Route path={'users'} element={<UsersPage/>}>
+                            <Route path={':id'} element={<SingleUser/>}>
+                                <Route path={'posts'} element={<UserPosts/>}/>
+                            </Route>
+                            <Route path={':id/albums'} element={<UsersAlbums/>}>
+                                <Route path={':albumId/photos'} element={<AlbumPhotos/>}/>
+                            </Route>
+                        </Route>
+                        <Route path={'posts'} element={<PostsPage/>}>
+                            <Route path={':id'} element={<SinglePostPage/>}>
+                                <Route path={'comments'} element={<CommentsMap/>}/>
+                            </Route>
+                        </Route>
+                        <Route path={'*'} element={<UsersPage/>}/>
+                    </Route>
+            </Routes>
+        </div>
+    )
 }
-
 export default App;

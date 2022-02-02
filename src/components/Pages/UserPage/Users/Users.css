@@ -1,0 +1,30 @@
+
+.UsersAll {
+    display: flex;
+    background-color: deepskyblue;
+    justify-content: space-evenly;
+    align-items: start;
+    padding: 20px;
+}
+
+.user {
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.userBtn button{
+    margin-right: 5px;
+}
+
+.post {
+    margin-bottom: 20px;
+}
+
+.singleUser {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}

@@ -1,0 +1,30 @@
+.allPosts {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: gray;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid coral;
+    padding: 10px;
+    margin: 20px;
+}
+
+.posts h1 {
+    margin-left: 20px;
+}
+
+.singlePost {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fullPost {
+    padding: 10px;
+}
